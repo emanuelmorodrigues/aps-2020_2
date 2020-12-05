@@ -55,8 +55,21 @@ class RevendaComArray{
         if(i == indice){
             System.out.println("___");
             System.out.println("Produto não disponível");
-        } 
+        }
+    }
 
+    public void consultarProduto(int cod){
+        int i;
+        for(i = 0; i < indice; i++){
+            if(cod == produtos[i].getCod()){
+                System.out.println(produtos[i].toString());
+                break;
+            } 
+        }
+        if(i == indice){
+            System.out.println("___");
+            System.out.println("Produto não disponível");
+        }
     }
 
     public void listaPrecos(){

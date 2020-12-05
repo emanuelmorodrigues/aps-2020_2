@@ -46,11 +46,24 @@ class Produto{
 
     // Methods
     public void compra(int quantidade){qtdeEstoque += quantidade; }
-    public void venda(int quantidade){qtdeEstoque -= quantidade;}
+    public void venda(int quantidade){
+        if(quantidade <= this.qtdeEstoque) qtdeEstoque -= quantidade;
+        else{
+            System.out.println("A quantidade escolhida é maior que a quantidade do estoque, por favor, repita a operação");
+            System.out.println("Quantidade em estoque: " + this.qtdeEstoque);
+        }
+    }
     public double calculaPrecoVenda(){
         double precoVenda =  this.valorCompra + this.custo + 
         this.margemLucro*(this.valorCompra + this.custo);
         return precoVenda;
+    }
+
+    @Override
+    public String toString(){
+        return "Código: " + this.cod + ", descrição: " + this.desc +
+            ", valor de Compra: " + this.valorCompra + ", custo: " + this.custo +
+            ", margem de lucro: " + this.margemLucro + ", quantidade no estoque: " + this.qtdeEstoque;
     }
 
 }
