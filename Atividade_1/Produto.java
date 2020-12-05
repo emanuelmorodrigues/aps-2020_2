@@ -48,12 +48,14 @@ class Produto{
     public void compra(int quantidade){
         qtdeEstoque += quantidade;
         System.out.println("___");
-        System.out.println("A compra foi realizada com sucesso");
+        System.out.println("Compra realizada com sucesso");
+        System.out.println("Quantidade em estoque: " + this.qtdeEstoque);
     }
     public void venda(int quantidade){
         if(quantidade <= this.qtdeEstoque){
             qtdeEstoque -= quantidade;
             System.out.println("Venda realizada com sucesso");
+            System.out.println("Quantidade em estoque: " + this.qtdeEstoque);
         } 
         else{
             System.out.println("___");
