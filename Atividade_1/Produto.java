@@ -31,22 +31,26 @@ class Produto{
 
 
     // Getters and Setters
+    public int getCod(){return this.cod;}
     public double getValorDeCompra(){return this.valorCompra;}
     public double getCusto(){return this.custo;}
     public double getMargemDeLucro(){return this.margemLucro;}
+    public int getQtdeEmEstoque(){return this.qtdeEstoque;}
+    public String getDesc(){return this.desc;}
 
     public void setValorDeCompra(double valor){this.valorCompra = valor;}
     public void setCusto(double custo){this.custo = custo;}
     public void setMargemDeLucro(double margem){this.margemLucro = margem;}
+    public void setQtdeEstoque(int qtde){this.qtdeEstoque = qtde;}
 
 
     // Methods
-
     public void compra(int quantidade){qtdeEstoque += quantidade; }
     public void venda(int quantidade){qtdeEstoque -= quantidade;}
     public double calculaPrecoVenda(){
-        return valorCompra + custo + 
-        margemLucro*(valorCompra + custo);
+        double precoVenda =  this.valorCompra + this.custo + 
+        this.margemLucro*(this.valorCompra + this.custo);
+        return precoVenda;
     }
 
 }
