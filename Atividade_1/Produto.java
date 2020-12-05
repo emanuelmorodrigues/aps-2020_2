@@ -45,10 +45,18 @@ class Produto{
 
 
     // Methods
-    public void compra(int quantidade){qtdeEstoque += quantidade; }
+    public void compra(int quantidade){
+        qtdeEstoque += quantidade;
+        System.out.println("___");
+        System.out.println("A compra foi realizada com sucesso");
+    }
     public void venda(int quantidade){
-        if(quantidade <= this.qtdeEstoque) qtdeEstoque -= quantidade;
+        if(quantidade <= this.qtdeEstoque){
+            qtdeEstoque -= quantidade;
+            System.out.println("Venda realizada com sucesso");
+        } 
         else{
+            System.out.println("___");
             System.out.println("A quantidade escolhida é maior que a quantidade do estoque, por favor, repita a operação");
             System.out.println("Quantidade em estoque: " + this.qtdeEstoque);
         }

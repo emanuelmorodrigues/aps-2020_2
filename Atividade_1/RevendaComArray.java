@@ -20,11 +20,13 @@ class RevendaComArray{
             if(cod == produtos[i].getCod()){
                 Produto produto = produtos[i];
                 produto.compra(qtde);
-                System.out.println("A compra foi realizada com sucesso");
                 break;
             }
         }
-        if(i == indice) System.out.println("Produto não disponível");
+        if(i == indice){
+            System.out.println("___");
+            System.out.println("Produto não disponível");
+        }
     }
 
     public void vender(int cod, int qtde){
@@ -33,11 +35,13 @@ class RevendaComArray{
             if(cod == produtos[i].getCod()){
                 Produto produto = produtos[i];
                 produto.venda(qtde);
-                System.out.println("Venda realizada com sucesso");
                 break;
             }
         }
-        if(i == indice) System.out.println("Produto não disponível");
+        if(i == indice){
+            System.out.println("___");
+            System.out.println("Produto não disponível");
+        }
     }
 
     public void consultaPrecoVenda(int cod){
