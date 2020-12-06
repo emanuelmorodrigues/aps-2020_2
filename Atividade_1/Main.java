@@ -22,7 +22,7 @@ public class Main{
             if (opcaoMenu == 0) break;
             switch(opcaoMenu){
                 case 1:
-                r.insereProduto(menu.criarProduto());
+                r.insereProduto(menu.criarProduto(r));
                 break;
                 case 2:
                 menu.comprarProduto(r);
@@ -39,11 +39,16 @@ public class Main{
                 case 6:
                 menu.consultarProduto(r);
                 break;
+                case 7:
+                menu.alterarProduto(r);
+                break;
                 default:
                 System.out.println("Opção inválida, retornando ao menu");
                 break;
             }
         }  
+
+        r.buscarProduto(1);
         
         sc.close();
     }

@@ -8,6 +8,9 @@ class RevendaComArray{
         indice = 0;    
     }
 
+    //Getters and Setters
+    public Produto[] getProdutos(){return produtos;}
+
     // Methods
     public void insereProduto(Produto p){ 
         produtos[indice] = p;
@@ -74,6 +77,22 @@ class RevendaComArray{
             System.out.println("___");
             System.out.println("Produto não disponível");
         }
+    }
+
+    public Produto buscarProduto(int cod){
+        int i;
+        for(i = 0; i < indice; i++){
+            if(cod == produtos[i].getCod()){
+                break;
+            }
+        }
+        if(i == indice){
+            System.out.println("___");
+            System.out.println("Produto não disponível");
+            Produto p = new Produto(-1, "none");
+            return p;
+        }
+        return produtos[i];
     }
 
     public void listaPrecos(){

@@ -38,6 +38,7 @@ class Produto{
     public int getQtdeEmEstoque(){return this.qtdeEstoque;}
     public String getDesc(){return this.desc;}
 
+    public void setDesc(String desc){this.desc = desc;}
     public void setValorDeCompra(double valor){this.valorCompra = valor;}
     public void setCusto(double custo){this.custo = custo;}
     public void setMargemDeLucro(double margem){this.margemLucro = margem;}
@@ -45,6 +46,12 @@ class Produto{
 
 
     // Methods
+    public void alterarProduto(String desc, double valorCompra, double custo, double margemLucro){
+        this.desc = desc;
+        this.valorCompra = valorCompra;
+        this.custo = custo;
+        this.margemLucro = margemLucro;
+    }
     public void compra(int quantidade){
         qtdeEstoque += quantidade;
         System.out.println("___");

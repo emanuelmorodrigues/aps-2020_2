@@ -10,7 +10,7 @@ class Menu {
     }
 
     // Methods
-    public Produto criarProduto() {
+    public Produto criarProduto(RevendaComArray r) {
         System.out.println("___\nCriar Produto\n___");
         System.out.println("Preencha os campos abaixo:");
         System.out.println("Código");
@@ -68,6 +68,33 @@ class Menu {
         System.out.println("Código");
         int cod = sc.nextInt();
         r.consultarProduto(cod);
+    }
+
+    public void alterarProduto(RevendaComArray r){
+        System.out.println("___\nAlterar Produto\n___");
+        System.out.println("Preencha o campo abaixo:");
+        System.out.println("Código");
+        int cod = sc.nextInt();
+        Produto p = r.buscarProduto(cod);
+        if(p.getCod() < 0) System.out.println("Não foi possível alterar o produto");
+        else {
+            System.out.println("Preencha os campos abaixo:");
+            System.out.println("Descrição");
+            String desc = sc.next();
+            p.setDesc(desc);
+            System.out.println("Valor de compra");
+            double vlCompra = sc.nextDouble();
+            p.setValorDeCompra(vlCompra);
+            System.out.println("Custo");
+            double custo = sc.nextDouble();
+            p.setCusto(custo);
+            System.out.println("Margem de lucro");
+            double margem = sc.nextDouble();
+            p.setMargemDeLucro(margem);
+
+            r.consultarProduto(cod);
+        }
+
     }
        
 }
